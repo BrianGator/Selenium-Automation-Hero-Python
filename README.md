@@ -2,124 +2,82 @@
 
 **Written by Brian McCarthy**
 
-This repository is a comprehensive **Selenium WebDriver 4 automation framework guide using Java, TestNG, Maven, API testing, login testing, CI/CD, Page Object Model, data-driven testing, logging, reporting, and framework design from scratch**.
+This repository is a complete **Selenium WebDriver 4 Java automation guide** covering Java fundamentals, Selenium locators, WebElements, waits, advanced browser interactions, TestNG, Maven, Page Object Model, API tests, login tests, CI/CD, Git/GitHub, data-driven testing, and framework design from scratch.
 
-The course structure is adapted from the O'Reilly course outline for **Selenium WebDriver 4 with Python - Zero To Hero** and translated into a Java Selenium automation learning path. The original outline covers Selenium WebDriver setup, programming fundamentals, locators, WebElements, waits, advanced interactions, file upload/download, windows/iframes, logging, testing frameworks, automation framework design, data-driven testing, Git/GitHub, and Jenkins CI/CD. This README keeps that same module progression but provides **Java Selenium examples**.
+All module information is displayed directly on the page. There are **no expandable arrows**, no hidden `<details>` sections, and no click-to-expand content.
 
 ---
 
 ## Course Content Table of Contents
 
-| Module # | Module Name | Module Details |
+| # | Module | Details |
 |---:|---|---|
-| 1 | [Introduction](#module-1---introduction) | Selenium purpose, WebDriver architecture, browser automation value, QA automation career context, and framework goals. |
-| 2 | [Setup and Configuration](#module-2---setup-and-configuration) | Java JDK, IDE, Maven, browser drivers, Selenium dependencies, project setup, and first runnable test environment. |
-| 3 | [Understanding Variables and Data Types](#module-3---understanding-variables-and-data-types) | Java variables, primitives, strings, booleans, object references, arithmetic, precedence, formatting, and test data values. |
-| 4 | [Advanced Data Types](#module-4---advanced-data-types) | Arrays, lists, maps, sets, collections, test data containers, locator maps, and data structures used in test automation. |
-| 5 | [Comparison and Boolean Operators](#module-5---comparison-and-boolean-operators) | Equality, relational operators, boolean logic, compound conditions, validation logic, and assertion decision-making. |
-| 6 | [Program Control Flow](#module-6---program-control-flow) | `if`, `else`, `switch`, `for`, enhanced `for`, `while`, break/continue, and test branching patterns. |
-| 7 | [Functions/Methods - Reusable Code](#module-7---functionsmethods---reusable-code) | Java methods, parameters, return values, reusable helper methods, generic actions, waits, and utility design. |
-| 8 | [Classes and Object-Oriented Programming](#module-8---classes-and-object-oriented-programming) | Classes, objects, constructors, encapsulation, inheritance, interfaces, polymorphism, and Page Object Model foundations. |
-| 9 | [Exception Handling](#module-9---exception-handling) | `try/catch/finally`, Selenium exceptions, stale elements, timeouts, no such element, custom errors, and screenshot-on-failure handling. |
-| 10 | [Modules and Packages](#module-10---modules-and-packages) | Java packages, Maven modules, page/test/util package organization, imports, reusable libraries, and framework structure. |
-| 11 | [Working with Files](#module-11---working-with-files) | Reading properties files, CSV data, JSON data, screenshots, downloads, file validation, and test evidence. |
-| 12 | [Inspecting Elements on Different Browsers](#module-12---inspecting-elements-on-different-browsers) | Chrome DevTools, Edge/Firefox inspection, DOM basics, element attributes, accessibility, dynamic elements, and locator discovery. |
-| 13 | [Selenium WebDriver Setup and Installation](#module-13---selenium-webdriver-setup-and-installation) | Selenium 4 dependency setup, WebDriverManager, Chrome/Firefox/Edge setup, driver lifecycle, and first Java WebDriver script. |
-| 14 | [Running Tests on Various Browsers](#module-14---running-tests-on-various-browsers) | Chrome, Firefox, Edge, Safari concepts, cross-browser execution, driver factory, headless mode, and browser parameterization. |
-| 15 | [Finding Elements](#module-15---finding-elements) | ID, name, class name, link text, partial link text, tag name, CSS, XPath, `findElement`, `findElements`, and dynamic IDs. |
-| 16 | [CSS Selectors - Advanced Locators](#module-16---css-selectors---advanced-locators) | CSS IDs, classes, attributes, contains, starts/ends patterns, child nodes, hierarchy, nth-child, and locator quality. |
-| 17 | [XPath - Advanced Locators](#module-17---xpath---advanced-locators) | Absolute vs relative XPath, text, contains, starts-with, axes, parent/sibling, dynamic XPath, and XPath best practices. |
-| 18 | [Working with WebElements](#module-18---working-with-webelements) | Click, type, clear, get text, get attributes, enabled/disabled state, checkboxes, radio buttons, dropdowns, hidden elements, and element lists. |
-| 19 | [Useful WebDriver Methods and Properties](#module-19---useful-webdriver-methods-and-properties) | URL, title, page source, window size, element presence, generic element methods, reusable find/wait methods, and dynamic XPath helpers. |
-| 20 | [Selenium Wait Types](#module-20---selenium-wait-types) | Implicit waits, explicit waits, FluentWait, expected conditions, polling, timeouts, and synchronization strategy. |
-| 21 | [Advanced Interactions](#module-21---advanced-interactions) | Calendars, autocomplete, dynamic dropdowns, screenshots, JavaScriptExecutor, scrolling, browser size, and complex UI flows. |
-| 22 | [File Upload and Download](#module-22---file-upload-and-download) | Native file upload with `sendKeys`, download folder configuration, downloaded file validation, and system dialog limitations. |
-| 23 | [Switch Windows and Iframes](#module-23---switch-windows-and-iframes) | Window handles, tab switching, iframe switching, JavaScript popups, alerts, confirms, prompts, and focus management. |
-| 24 | [Actions Class](#module-24---actions-class) | Mouse hover, drag-and-drop, sliders, right-click, double-click, keyboard actions, composite actions, and user-like interaction. |
-| 25 | [Logging Infrastructure](#module-25---logging-infrastructure) | Log4j2 setup, console logs, file logs, patterns, custom logger utility, debugging, and CI-friendly logging. |
-| 26 | [TestNG Infrastructure](#module-26---testng-infrastructure) | TestNG annotations, assertions, suite XML, groups, parameters, DataProvider, listeners, reports, and parallel tests. |
-| 27 | [JUnit / Pytest Equivalent Concepts for Java](#module-27---junit--pytest-equivalent-concepts-for-java) | Java alternatives to Python testing frameworks: JUnit 5, TestNG, assertions, lifecycle hooks, tags, parameterized tests, and runner selection. |
-| 28 | [Automation Framework - Part 1](#module-28---automation-framework---part-1) | Framework folder structure, Maven setup, BaseTest, DriverFactory, configuration, Page Objects, and first framework test. |
-| 29 | [Automation Framework - Part 2](#module-29---automation-framework---part-2) | Custom driver methods, reusable waits, navigation helpers, page utilities, screenshot utility, and robust element handling. |
-| 30 | [Automation Framework - Part 3](#module-30---automation-framework---part-3) | Reporting, listeners, retry analyzer, environment config, browser config, parallel execution, and CI integration. |
-| 31 | [Framework Practice Exercise](#module-31---framework-practice-exercise) | End-to-end registration/course/login flow, dynamic iframe handling, page classes, test class implementation, and refactoring. |
-| 32 | [Data-Driven Testing](#module-32---data-driven-testing) | TestNG DataProvider, CSV, Excel, JSON, multiple datasets, parameterized browser/login tests, and test data utilities. |
-| 33 | [Running the Complete Test Suite](#module-33---running-the-complete-test-suite) | Running smoke/regression suites, browser-specific suites, Maven commands, TestNG XML, suite navigation, and local execution flow. |
-| 34 | [Git and GitHub Version Control](#module-34---git-and-github-version-control) | Git installation, staging, commits, branches, merge conflicts, GitHub remotes, clone, pull, push, and framework versioning. |
-| 35 | [Continuous Integration with Jenkins](#module-35---continuous-integration-with-jenkins) | Jenkins setup, plugins, Git integration, Maven jobs, scheduled builds, secure credentials, reports, and remote build execution. |
-| 36 | [Conclusion and Next Steps](#module-36---conclusion-and-next-steps) | Recommended next steps, portfolio improvements, interview preparation, CI/CD expansion, cloud grids, API integration, and framework maturity. |
-| 37 | [API Tests for Selenium Java Frameworks](#api-tests-for-selenium-java-frameworks) | Rest Assured setup, GET/POST/PUT/DELETE, authentication, API setup/cleanup, schema-style checks, and backend validation. |
-| 38 | [Login Tests for Selenium Java Frameworks](#login-tests-for-selenium-java-frameworks) | Valid login, invalid login, empty fields, locked users, logout, role validation, session validation, and secure credentials. |
-| 39 | [Locator Reference Guide](#locator-reference-guide) | ID, name, CSS, XPath, link text, class name, tag name, accessibility notes, dynamic locator guidance, and anti-patterns. |
-| 40 | [Building a Selenium Java Framework from Scratch](#building-a-selenium-java-framework-from-scratch) | Required files, folders, dependencies, step-by-step framework build, BaseTest, DriverFactory, Page Objects, utilities, and CI-ready structure. |
-| 41 | [Build from Scratch vs Pre-Built Frameworks](#build-from-scratch-vs-pre-built-frameworks) | When custom frameworks are needed, when starter templates are better, popular framework choices, and scenario-based recommendations. |
-| 42 | [Top 30 Selenium Java Technical Interview Questions](#top-30-selenium-java-technical-interview-questions) | Java Selenium interview Q&A with code examples covering WebDriver, waits, locators, POM, TestNG, Maven, API, Jenkins, and frameworks. |
+| 1 | [Introduction](#module-1---introduction) | Selenium purpose, WebDriver architecture, browser automation value, and framework goals. |
+| 2 | [Setup and Configuration](#module-2---setup-and-configuration) | Java, Maven, IDE, Selenium dependencies, TestNG, drivers, and project setup. |
+| 3 | [Variables and Data Types](#module-3---variables-and-data-types) | Java variables, strings, numbers, booleans, WebElements, and runtime data. |
+| 4 | [Advanced Data Types](#module-4---advanced-data-types) | Arrays, lists, maps, sets, `List<WebElement>`, and structured test data. |
+| 5 | [Comparison and Boolean Operators](#module-5---comparison-and-boolean-operators) | Assertions, equality checks, UI state validation, and compound test logic. |
+| 6 | [Program Control Flow](#module-6---program-control-flow) | If/else, switch, loops, table iteration, product search, and pagination. |
+| 7 | [Reusable Methods](#module-7---reusable-methods) | Methods, parameters, return values, reusable wait/click/type helpers, and utilities. |
+| 8 | [Classes and OOP](#module-8---classes-and-oop) | Classes, objects, constructors, inheritance, interfaces, polymorphism, and POM. |
+| 9 | [Exception Handling](#module-9---exception-handling) | Selenium exceptions, try/catch, stale elements, timeouts, click interception, and screenshots. |
+| 10 | [Modules and Packages](#module-10---modules-and-packages) | Java package layout, Maven folder structure, pages, tests, utils, listeners, and resources. |
+| 11 | [Working with Files](#module-11---working-with-files) | Properties, JSON, CSV, Excel, screenshots, downloads, uploads, and file validation. |
+| 12 | [Inspecting Elements](#module-12---inspecting-elements) | DevTools, DOM, attributes, dynamic elements, iframes, and locator discovery. |
+| 13 | [WebDriver Setup](#module-13---webdriver-setup) | Selenium setup, browser commands, WebDriverManager, Selenium Manager, and driver lifecycle. |
+| 14 | [Multiple Browsers](#module-14---multiple-browsers) | Chrome, Firefox, Edge, headless mode, DriverFactory, browser parameters, and cross-browser execution. |
+| 15 | [Finding Elements](#module-15---finding-elements) | ID, name, class, tag, link text, CSS, XPath, `findElement`, `findElements`, and scoped lookup. |
+| 16 | [CSS Selectors](#module-16---css-selectors) | CSS ID, class, attribute, contains, starts-with, hierarchy, nth-child, and selector quality. |
+| 17 | [XPath Locators](#module-17---xpath-locators) | Relative XPath, text, contains, starts-with, axes, parent, ancestor, sibling, and dynamic XPath. |
+| 18 | [Working with WebElements](#module-18---working-with-webelements) | Click, type, clear, attributes, text, dropdowns, checkboxes, radio buttons, and state checks. |
+| 19 | [Useful WebDriver Methods](#module-19---useful-webdriver-methods) | URL, title, cookies, page source, screenshots, window state, attributes, and broken link checks. |
+| 20 | [Wait Types](#module-20---wait-types) | Implicit wait, explicit wait, FluentWait, ExpectedConditions, Ajax waits, and synchronization. |
+| 21 | [Advanced Interactions](#module-21---advanced-interactions) | JavaScriptExecutor, scrolling, calendars, tables, autocomplete, dynamic dropdowns, and totals. |
+| 22 | [File Upload and Download](#module-22---file-upload-and-download) | Upload with `sendKeys`, Chrome download preferences, file existence checks, and download validation. |
+| 23 | [Windows and Iframes](#module-23---windows-and-iframes) | Alerts, prompts, child windows, tabs, iframe switching, nested frames, and focus handling. |
+| 24 | [Actions Class](#module-24---actions-class) | Hover, drag-and-drop, right-click, double-click, keyboard actions, and composite user interactions. |
+| 25 | [Logging Infrastructure](#module-25---logging-infrastructure) | Log4j2, file logs, console logs, action logs, framework debugging, and CI troubleshooting. |
+| 26 | [TestNG Infrastructure](#module-26---testng-infrastructure) | TestNG annotations, groups, XML suites, DataProvider, parameters, listeners, and parallel tests. |
+| 27 | [JUnit / Pytest Equivalents](#module-27---junit--pytest-equivalents) | JUnit 5 and TestNG alternatives to Python test frameworks. |
+| 28 | [Framework Part 1](#module-28---framework-part-1) | Maven framework start, ecommerce flow, product selection, waits, cart, and checkout. |
+| 29 | [Framework Part 2](#module-29---framework-part-2) | Page Object Model, PageFactory, abstract components, page actions, and POM refactoring. |
+| 30 | [Framework Part 3](#module-30---framework-part-3) | BaseTest, global config, driver initialization, error tests, groups, and parallel execution. |
+| 31 | [Framework Practice Exercise](#module-31---framework-practice-exercise) | End-to-end login, product, cart, checkout, confirmation, and refactoring practice. |
+| 32 | [Data-Driven Testing](#module-32---data-driven-testing) | TestNG DataProvider, HashMap, JSON, Excel, CSV, and parameterized tests. |
+| 33 | [Running Complete Test Suite](#module-33---running-complete-test-suite) | Maven commands, TestNG XML, smoke/regression suites, headless mode, and reports. |
+| 34 | [Git and GitHub](#module-34---git-and-github) | Git config, commits, branches, remotes, push/pull, merge conflicts, and framework versioning. |
+| 35 | [Jenkins CI/CD](#module-35---jenkins-cicd) | Jenkins pipeline, Git integration, Maven job, parameters, scheduled runs, artifacts, and reports. |
+| 36 | [Conclusion](#module-36---conclusion) | Framework maturity roadmap and recommended next steps. |
+| 37 | [API Tests](#api-tests-for-selenium-java-frameworks) | Rest Assured, backend validation, setup data, cleanup, and UI/API hybrid strategy. |
+| 38 | [Login Tests](#login-tests-for-selenium-java-frameworks) | Valid login, invalid login, empty fields, locked users, logout, roles, and credential handling. |
+| 39 | [Locator Reference Guide](#locator-reference-guide) | Locator priority, examples, anti-patterns, and best practices. |
+| 40 | [Framework from Scratch](#building-a-selenium-java-framework-from-scratch) | Required files, folders, dependencies, BaseTest, DriverFactory, Page Objects, utilities, and CI/CD. |
+| 41 | [Custom vs Pre-Built Frameworks](#build-from-scratch-vs-pre-built-frameworks) | When to build custom, when to use a starter, and popular Selenium Java framework stacks. |
+| 42 | [Top 30 Interview Questions](#top-30-selenium-java-technical-interview-questions) | Selenium Java technical interview questions with code examples. |
 
 ---
 
 ## Module 1 - Introduction
 
-Selenium WebDriver is a browser automation tool used to validate web applications through real browser interactions. It can open pages, find elements, click, type, select options, handle windows/iframes, execute JavaScript, capture screenshots, and validate user-facing behavior.
-
-<details>
-<summary>Click to expand Module 1 details, code, and expected result</summary>
-
-### Topics Covered
-
-- Why Selenium is used in QA automation.
-- Selenium WebDriver architecture.
-- Browser driver role.
-- Difference between manual testing and automated browser testing.
-- Where Selenium fits in regression, smoke, and CI/CD pipelines.
-
-### Java Example
+Selenium WebDriver automates real browser behavior. It validates user workflows such as navigation, search, form submission, shopping cart actions, checkout, file upload, reporting, and error handling.
 
 ```java
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-public class FirstSeleniumTest {
-    public static void main(String[] args) {
-        WebDriver driver = new ChromeDriver();
-        driver.get("https://example.com");
-        System.out.println(driver.getTitle());
-        driver.quit();
-    }
-}
+WebDriver driver = new ChromeDriver();
+driver.get("https://example.com");
+System.out.println("Title: " + driver.getTitle());
+System.out.println("URL: " + driver.getCurrentUrl());
+driver.quit();
 ```
 
-### Expected Result
+Expected result: Chrome opens, loads the site, prints the title and URL, and closes.
 
-- Chrome opens.
-- Browser navigates to `https://example.com`.
-- Page title prints to the console.
-- Browser closes cleanly.
-
-</details>
+Best practices: keep tests readable, close browser sessions, use explicit waits, and refactor repeated code into framework utilities.
 
 ---
 
 ## Module 2 - Setup and Configuration
 
-This module establishes the Java Selenium environment. A stable setup includes Java JDK, Maven, an IDE, browser drivers or Selenium Manager, TestNG or JUnit, and project dependencies.
-
-<details>
-<summary>Click to expand Module 2 details, code, and expected result</summary>
-
-### Required Software
-
-| Tool | Purpose |
-|---|---|
-| Java JDK 17+ | Runs Java code and test frameworks |
-| IntelliJ IDEA / Eclipse | IDE for writing tests |
-| Maven | Dependency and build management |
-| Selenium WebDriver 4 | Browser automation API |
-| TestNG | Test framework used for suites, groups, DataProvider, listeners, and reports |
-| Chrome / Firefox / Edge | Browsers used for execution |
-| Git | Version control |
-| Jenkins | CI/CD execution |
-
-### Maven `pom.xml`
+Required tools include Java JDK, Maven, IntelliJ/Eclipse, Selenium WebDriver, TestNG, Chrome/Firefox/Edge, Git, and Jenkins.
 
 ```xml
 <dependencies>
@@ -142,20 +100,25 @@ This module establishes the Java Selenium environment. A stable setup includes J
 </dependencies>
 ```
 
-### Expected Result
+```java
+public class SetupSmokeTest {
+    @Test
+    public void openBrowserTest() {
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://example.com");
+        Assert.assertEquals(driver.getTitle(), "Example Domain");
+        driver.quit();
+    }
+}
+```
 
-`mvn test` compiles the project, downloads dependencies, and runs TestNG tests.
-
-</details>
+Expected result: Maven downloads dependencies and TestNG runs the browser test successfully.
 
 ---
 
-## Module 3 - Understanding Variables and Data Types
+## Module 3 - Variables and Data Types
 
-Variables store test data, URLs, expected results, locator strings, credentials, and runtime values. Java is statically typed, so each variable must have a declared type.
-
-<details>
-<summary>Click to expand Module 3 details, code, and expected result</summary>
+Variables store URLs, expected titles, browser names, timeout values, product names, numeric totals, and element states.
 
 ```java
 String baseUrl = "https://example.com";
@@ -164,893 +127,97 @@ int timeoutSeconds = 10;
 boolean headless = false;
 
 driver.get(baseUrl);
-String actualTitle = driver.getTitle();
-Assert.assertEquals(actualTitle, expectedTitle);
+Assert.assertEquals(driver.getTitle(), expectedTitle);
+Assert.assertTrue(timeoutSeconds > 0);
+Assert.assertFalse(headless);
 ```
 
-### Expected Result
+```java
+String priceText = "$149.99";
+double price = Double.parseDouble(priceText.replace("$", ""));
+Assert.assertTrue(price > 0);
+```
 
-- `baseUrl` drives navigation.
-- `actualTitle` stores runtime browser output.
-- Test passes if the actual page title matches `Example Domain`.
-
-### Automation Usage
-
-- `String`: URLs, usernames, passwords, locator text.
-- `int`: timeout values, counts, retry attempts.
-- `boolean`: feature flags, pass/fail conditions, headless mode.
-- `double`: price validation, totals, calculations.
-
-</details>
+Expected result: runtime values are stored, parsed, and validated cleanly.
 
 ---
 
 ## Module 4 - Advanced Data Types
 
-Advanced data structures organize multiple values for test execution: login data, locator groups, product names, expected messages, and API payloads.
-
-<details>
-<summary>Click to expand Module 4 details, code, and expected result</summary>
+Use arrays, lists, maps, and sets for browsers, users, products, links, table rows, and windows.
 
 ```java
-List<String> browsers = Arrays.asList("chrome", "firefox", "edge");
-Map<String, String> user = new HashMap<>();
-user.put("email", "qa@example.com");
-user.put("password", "Password123");
+List<String> expectedProducts = Arrays.asList("ZARA COAT 3", "ADIDAS ORIGINAL", "IPHONE 13 PRO");
+List<WebElement> productCards = driver.findElements(By.cssSelector(".mb-3"));
 
-for (String browser : browsers) {
-    System.out.println("Run tests on: " + browser);
+for (WebElement card : productCards) {
+    String productName = card.findElement(By.cssSelector("b")).getText();
+    if (expectedProducts.contains(productName)) {
+        card.findElement(By.cssSelector("button:last-of-type")).click();
+    }
 }
 ```
 
-### Expected Output
-
-```text
-Run tests on: chrome
-Run tests on: firefox
-Run tests on: edge
+```java
+HashMap<String, String> user = new HashMap<>();
+user.put("email", "qa@example.com");
+user.put("role", "admin");
+Assert.assertEquals(user.get("role"), "admin");
 ```
 
-### Framework Use Cases
-
-- `List<WebElement>` for element collections.
-- `Map<String, String>` for environment settings.
-- `Object[][]` for TestNG DataProvider data.
-- POJO classes for test users, products, orders, and API payloads.
-
-</details>
+Expected result: the framework processes groups of elements and structured test data.
 
 ---
 
 ## Module 5 - Comparison and Boolean Operators
 
-Comparison and boolean operators are essential for assertions and branching test behavior.
-
-<details>
-<summary>Click to expand Module 5 details, code, and expected result</summary>
+Boolean logic validates UI state, text, URLs, and test outcomes.
 
 ```java
-boolean loginButtonDisplayed = driver.findElement(By.id("login")).isDisplayed();
-boolean loginButtonEnabled = driver.findElement(By.id("login")).isEnabled();
+WebElement button = driver.findElement(By.id("login"));
+Assert.assertTrue(button.isDisplayed() && button.isEnabled());
 
-Assert.assertTrue(loginButtonDisplayed && loginButtonEnabled,
-        "Login button should be visible and enabled");
+String currentUrl = driver.getCurrentUrl();
+Assert.assertTrue(currentUrl.contains("dashboard") || currentUrl.contains("products"));
 ```
 
-### Expected Result
-
-The test passes only when the login button is both visible and enabled.
-
-### Common Operators
-
-| Operator | Meaning |
-|---|---|
-| `==` | Equal for primitive values |
-| `.equals()` | Equal for object/string values |
-| `!=` | Not equal |
-| `>` `<` `>=` `<=` | Numeric comparison |
-| `&&` | AND |
-| `||` | OR |
-| `!` | NOT |
-
-</details>
+Expected result: tests pass only when expected browser or UI conditions are true.
 
 ---
 
 ## Module 6 - Program Control Flow
 
-Control flow allows tests and utilities to make decisions and repeat operations.
-
-<details>
-<summary>Click to expand Module 6 details, code, and expected result</summary>
+Control flow supports searching products, iterating tables, handling pagination, and branching based on conditions.
 
 ```java
-List<WebElement> products = driver.findElements(By.cssSelector(".product-name"));
-String targetProduct = "Laptop";
-
+List<WebElement> products = driver.findElements(By.cssSelector(".product"));
 for (WebElement product : products) {
-    if (product.getText().equalsIgnoreCase(targetProduct)) {
-        product.click();
+    String name = product.findElement(By.cssSelector(".product-name")).getText();
+    if (name.equalsIgnoreCase("Laptop")) {
+        product.findElement(By.cssSelector("button.add")).click();
         break;
     }
 }
 ```
 
-### Expected Result
-
-The test loops through product names and clicks the product matching `Laptop`.
-
-### Automation Use Cases
-
-- Loop through search results.
-- Select dropdown options dynamically.
-- Retry a condition.
-- Branch based on browser, environment, or user role.
-- Stop iteration when the target element is found.
-
-</details>
-
----
-
-## Module 7 - Functions/Methods - Reusable Code
-
-Reusable methods reduce duplication and make tests easier to maintain.
-
-<details>
-<summary>Click to expand Module 7 details, code, and expected result</summary>
-
 ```java
-public WebElement waitForVisible(By locator, int seconds) {
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
-    return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-}
-
-public void type(By locator, String value) {
-    WebElement element = waitForVisible(locator, 10);
-    element.clear();
-    element.sendKeys(value);
-}
-```
-
-### Expected Result
-
-Test classes can call `type(By.id("email"), "qa@example.com")` instead of repeating wait, clear, and sendKeys logic.
-
-</details>
-
----
-
-## Module 8 - Classes and Object-Oriented Programming
-
-OOP is the foundation of maintainable Selenium frameworks. Page Objects, BaseTest, DriverFactory, and utility classes all rely on classes and objects.
-
-<details>
-<summary>Click to expand Module 8 details, code, and expected result</summary>
-
-```java
-public class LoginPage {
-    private WebDriver driver;
-    private By email = By.id("email");
-    private By password = By.id("password");
-    private By loginButton = By.id("login");
-
-    public LoginPage(WebDriver driver) {
-        this.driver = driver;
+boolean itemFound = false;
+do {
+    List<WebElement> rows = driver.findElements(By.cssSelector("table tbody tr"));
+    itemFound = rows.stream().anyMatch(row -> row.getText().contains("Rice"));
+    if (!itemFound) {
+        driver.findElement(By.cssSelector("[aria-label='Next']")).click();
     }
-
-    public void login(String userEmail, String userPassword) {
-        driver.findElement(email).sendKeys(userEmail);
-        driver.findElement(password).sendKeys(userPassword);
-        driver.findElement(loginButton).click();
-    }
-}
+} while (!itemFound);
 ```
 
-### Expected Result
-
-The test can instantiate `LoginPage` and call `login()` instead of managing raw locators in the test class.
-
-</details>
+Expected result: dynamic content is searched until the desired item is found.
 
 ---
 
-## Module 9 - Exception Handling
+## Module 7 - Reusable Methods
 
-Selenium tests must handle timing, stale elements, missing elements, unexpected alerts, and invalid states.
-
-<details>
-<summary>Click to expand Module 9 details, code, and expected result</summary>
-
-```java
-try {
-    driver.findElement(By.id("dashboard")).click();
-} catch (NoSuchElementException e) {
-    System.out.println("Dashboard element was not found: " + e.getMessage());
-    throw e;
-} catch (StaleElementReferenceException e) {
-    System.out.println("Element became stale. Re-locating element.");
-    driver.findElement(By.id("dashboard")).click();
-}
-```
-
-### Expected Result
-
-The framework logs useful failure context and can retry safe stale-element operations.
-
-### Common Selenium Exceptions
-
-- `NoSuchElementException`
-- `TimeoutException`
-- `StaleElementReferenceException`
-- `ElementClickInterceptedException`
-- `NoSuchFrameException`
-- `NoSuchWindowException`
-
-</details>
-
----
-
-## Module 10 - Modules and Packages
-
-Java packages organize code by responsibility.
-
-<details>
-<summary>Click to expand Module 10 details, code, and expected result</summary>
-
-```text
-src/test/java/
-├── base/
-│   └── BaseTest.java
-├── pages/
-│   ├── LoginPage.java
-│   └── DashboardPage.java
-├── tests/
-│   └── LoginTests.java
-├── utils/
-│   ├── ConfigReader.java
-│   ├── WaitUtils.java
-│   └── ScreenshotUtils.java
-└── api/
-    └── UserApiClient.java
-```
-
-### Expected Result
-
-The framework separates test setup, page objects, utilities, tests, and API helpers.
-
-</details>
-
----
-
-## Module 11 - Working with Files
-
-Files are used for configuration, test data, screenshots, downloads, logs, and reports.
-
-<details>
-<summary>Click to expand Module 11 details, code, and expected result</summary>
-
-```java
-Properties properties = new Properties();
-try (FileInputStream file = new FileInputStream("src/test/resources/config.properties")) {
-    properties.load(file);
-}
-String baseUrl = properties.getProperty("baseUrl");
-String browser = properties.getProperty("browser");
-```
-
-### Expected Result
-
-The framework reads runtime configuration from a properties file instead of hardcoding values in tests.
-
-### Example `config.properties`
-
-```properties
-baseUrl=https://example.com
-browser=chrome
-headless=false
-```
-
-</details>
-
----
-
-## Module 12 - Inspecting Elements on Different Browsers
-
-Inspection helps identify stable locators. Chrome, Edge, Firefox, and Safari provide DevTools for inspecting the DOM.
-
-<details>
-<summary>Click to expand Module 12 details, locator examples, and expected result</summary>
-
-### What to Inspect
-
-- `id`
-- `name`
-- `class`
-- `type`
-- `href`
-- `aria-label`
-- visible text
-- parent/child relationship
-- dynamic attributes
-- iframe boundaries
-
-### Locator Example
-
-```java
-By emailInput = By.id("email");
-By submitButton = By.cssSelector("button[type='submit']");
-By forgotPassword = By.linkText("Forgot Password?");
-```
-
-### Expected Result
-
-The selected locators uniquely identify elements and remain stable across test runs.
-
-</details>
-
----
-
-## Module 13 - Selenium WebDriver Setup and Installation
-
-Selenium 4 can manage drivers automatically through Selenium Manager, but many frameworks still use WebDriverManager for explicit driver management.
-
-<details>
-<summary>Click to expand Module 13 details, code, and expected result</summary>
-
-```java
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-public class DriverSetup {
-    public static WebDriver createChromeDriver() {
-        WebDriverManager.chromedriver().setup();
-        return new ChromeDriver();
-    }
-}
-```
-
-### Expected Result
-
-ChromeDriver is resolved and launched without manually downloading driver executables.
-
-</details>
-
----
-
-## Module 14 - Running Tests on Various Browsers
-
-Cross-browser testing validates that the application behaves correctly in different browsers.
-
-<details>
-<summary>Click to expand Module 14 details, code, and expected result</summary>
-
-```java
-public WebDriver createDriver(String browser) {
-    switch (browser.toLowerCase()) {
-        case "firefox":
-            return new FirefoxDriver();
-        case "edge":
-            return new EdgeDriver();
-        case "chrome":
-        default:
-            return new ChromeDriver();
-    }
-}
-```
-
-### TestNG Parameter Example
-
-```xml
-<parameter name="browser" value="chrome"/>
-```
-
-```java
-@Parameters("browser")
-@BeforeMethod
-public void setup(String browser) {
-    driver = createDriver(browser);
-}
-```
-
-### Expected Result
-
-The same test suite can run against Chrome, Firefox, or Edge based on suite configuration.
-
-</details>
-
----
-
-## Module 15 - Finding Elements
-
-Finding elements is the core of Selenium WebDriver automation.
-
-<details>
-<summary>Click to expand Module 15 details, code, and expected result</summary>
-
-```java
-driver.findElement(By.id("email")).sendKeys("qa@example.com");
-driver.findElement(By.name("password")).sendKeys("Password123");
-driver.findElement(By.linkText("Login")).click();
-
-List<WebElement> links = driver.findElements(By.tagName("a"));
-System.out.println("Total links: " + links.size());
-```
-
-### Expected Result
-
-- Email and password fields receive text.
-- Login link or button is clicked.
-- Link count is printed.
-
-</details>
-
----
-
-## Module 16 - CSS Selectors - Advanced Locators
-
-CSS selectors are fast, readable, and useful for stable locator design.
-
-<details>
-<summary>Click to expand Module 16 details, code, and expected result</summary>
-
-```java
-By byId = By.cssSelector("#email");
-By byClass = By.cssSelector(".btn-primary");
-By byAttribute = By.cssSelector("input[name='password']");
-By contains = By.cssSelector("input[id*='user']");
-By startsWith = By.cssSelector("input[id^='user']");
-By child = By.cssSelector("form#loginForm button[type='submit']");
-```
-
-### Expected Result
-
-CSS selectors locate elements using IDs, classes, attributes, partial values, and hierarchy.
-
-</details>
-
----
-
-## Module 17 - XPath - Advanced Locators
-
-XPath is powerful for dynamic relationships, text, parent/child traversal, and sibling navigation.
-
-<details>
-<summary>Click to expand Module 17 details, code, and expected result</summary>
-
-```java
-By relative = By.xpath("//input[@id='email']");
-By text = By.xpath("//button[text()='Login']");
-By contains = By.xpath("//button[contains(text(),'Log')]");
-By startsWith = By.xpath("//input[starts-with(@id,'user')]");
-By parent = By.xpath("//label[text()='Email']/parent::div//input");
-By sibling = By.xpath("//td[text()='Brian']/following-sibling::td/button");
-```
-
-### Expected Result
-
-XPath finds elements by exact text, partial text, dynamic attributes, parent nodes, and sibling nodes.
-
-### Best Practice
-
-Prefer short relative XPath over absolute XPath.
-
-</details>
-
----
-
-## Module 18 - Working with WebElements
-
-WebElements represent elements located on a page. Selenium can click, type, clear, read text, check state, and interact with controls.
-
-<details>
-<summary>Click to expand Module 18 details, code, and expected result</summary>
-
-```java
-WebElement email = driver.findElement(By.id("email"));
-email.clear();
-email.sendKeys("qa@example.com");
-
-WebElement rememberMe = driver.findElement(By.id("remember"));
-if (!rememberMe.isSelected()) {
-    rememberMe.click();
-}
-
-Select country = new Select(driver.findElement(By.id("country")));
-country.selectByVisibleText("United States");
-```
-
-### Expected Result
-
-The email field is populated, the checkbox is selected, and the dropdown selects `United States`.
-
-</details>
-
----
-
-## Module 19 - Useful WebDriver Methods and Properties
-
-WebDriver and WebElement methods help validate page state and build utilities.
-
-<details>
-<summary>Click to expand Module 19 details, code, and expected result</summary>
-
-```java
-String currentUrl = driver.getCurrentUrl();
-String title = driver.getTitle();
-String text = driver.findElement(By.cssSelector("h1")).getText();
-String href = driver.findElement(By.linkText("Docs")).getAttribute("href");
-
-Assert.assertTrue(currentUrl.contains("example"));
-Assert.assertNotNull(title);
-Assert.assertFalse(text.isEmpty());
-Assert.assertTrue(href.startsWith("https"));
-```
-
-### Expected Result
-
-The test validates URL, title, heading text, and link attribute values.
-
-</details>
-
----
-
-## Module 20 - Selenium Wait Types
-
-Waits solve synchronization problems caused by slow pages, Ajax calls, animations, and dynamic rendering.
-
-<details>
-<summary>Click to expand Module 20 details, code, and expected result</summary>
-
-### Explicit Wait
-
-```java
-WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-WebElement button = wait.until(ExpectedConditions.elementToBeClickable(By.id("submit")));
-button.click();
-```
-
-### Fluent Wait
-
-```java
-Wait<WebDriver> fluentWait = new FluentWait<>(driver)
-        .withTimeout(Duration.ofSeconds(20))
-        .pollingEvery(Duration.ofMillis(500))
-        .ignoring(NoSuchElementException.class);
-
-WebElement result = fluentWait.until(d -> d.findElement(By.id("result")));
-```
-
-### Expected Result
-
-The test waits until the element is ready instead of failing immediately or relying on hard sleeps.
-
-</details>
-
----
-
-## Module 21 - Advanced Interactions
-
-Advanced interactions cover real-world widgets and browser features.
-
-<details>
-<summary>Click to expand Module 21 details, code, and expected result</summary>
-
-### JavaScript Scroll
-
-```java
-JavascriptExecutor js = (JavascriptExecutor) driver;
-WebElement element = driver.findElement(By.id("footer"));
-js.executeScript("arguments[0].scrollIntoView(true);", element);
-```
-
-### Screenshot
-
-```java
-File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-Files.copy(source.toPath(), Paths.get("screenshots/home.png"), StandardCopyOption.REPLACE_EXISTING);
-```
-
-### Autocomplete
-
-```java
-driver.findElement(By.id("search")).sendKeys("Selenium");
-WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".suggestion")));
-driver.findElement(By.xpath("//li[contains(text(),'Selenium WebDriver')]")).click();
-```
-
-### Expected Result
-
-The test scrolls to elements, captures screenshots, and selects dynamic autocomplete suggestions.
-
-</details>
-
----
-
-## Module 22 - File Upload and Download
-
-File upload usually uses `sendKeys()` on an `<input type='file'>`. Downloads require browser preferences and file validation.
-
-<details>
-<summary>Click to expand Module 22 details, code, and expected result</summary>
-
-### Upload
-
-```java
-WebElement upload = driver.findElement(By.cssSelector("input[type='file']"));
-upload.sendKeys(Paths.get("src/test/resources/sample.pdf").toAbsolutePath().toString());
-```
-
-### Chrome Download Folder
-
-```java
-Map<String, Object> prefs = new HashMap<>();
-prefs.put("download.default_directory", Paths.get("downloads").toAbsolutePath().toString());
-ChromeOptions options = new ChromeOptions();
-options.setExperimentalOption("prefs", prefs);
-WebDriver driver = new ChromeDriver(options);
-```
-
-### Expected Result
-
-The file is uploaded successfully or downloaded into the configured folder.
-
-</details>
-
----
-
-## Module 23 - Switch Windows and Iframes
-
-Modern apps often use tabs, windows, iframes, and JavaScript alerts.
-
-<details>
-<summary>Click to expand Module 23 details, code, and expected result</summary>
-
-### Window Switching
-
-```java
-String parent = driver.getWindowHandle();
-driver.findElement(By.id("openWindow")).click();
-
-for (String handle : driver.getWindowHandles()) {
-    if (!handle.equals(parent)) {
-        driver.switchTo().window(handle);
-        break;
-    }
-}
-
-Assert.assertTrue(driver.getTitle().contains("New Window"));
-driver.close();
-driver.switchTo().window(parent);
-```
-
-### Iframe Switching
-
-```java
-driver.switchTo().frame("payment-frame");
-driver.findElement(By.id("cardNumber")).sendKeys("4111111111111111");
-driver.switchTo().defaultContent();
-```
-
-### Alert Handling
-
-```java
-Alert alert = driver.switchTo().alert();
-Assert.assertTrue(alert.getText().contains("Are you sure"));
-alert.accept();
-```
-
-### Expected Result
-
-The test manages browser focus across windows, frames, and alerts.
-
-</details>
-
----
-
-## Module 24 - Actions Class
-
-The `Actions` class simulates advanced keyboard and mouse behavior.
-
-<details>
-<summary>Click to expand Module 24 details, code, and expected result</summary>
-
-```java
-Actions actions = new Actions(driver);
-
-WebElement menu = driver.findElement(By.id("productsMenu"));
-actions.moveToElement(menu).perform();
-
-driver.findElement(By.linkText("Laptops")).click();
-```
-
-### Drag and Drop
-
-```java
-WebElement source = driver.findElement(By.id("source"));
-WebElement target = driver.findElement(By.id("target"));
-new Actions(driver).dragAndDrop(source, target).perform();
-```
-
-### Expected Result
-
-Hover menus open, drag-and-drop executes, sliders move, and keyboard/mouse interactions behave like a user action.
-
-</details>
-
----
-
-## Module 25 - Logging Infrastructure
-
-Logging provides traceability for debugging local and CI failures.
-
-<details>
-<summary>Click to expand Module 25 details, code, and expected result</summary>
-
-### Log4j2 Dependency
-
-```xml
-<dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-core</artifactId>
-    <version>2.23.1</version>
-</dependency>
-<dependency>
-    <groupId>org.apache.logging.log4j</groupId>
-    <artifactId>log4j-api</artifactId>
-    <version>2.23.1</version>
-</dependency>
-```
-
-### Logger Usage
-
-```java
-private static final Logger logger = LogManager.getLogger(LoginTests.class);
-
-logger.info("Starting login test");
-logger.debug("Entering username");
-logger.error("Login failed");
-```
-
-### Expected Result
-
-Logs are printed to console and/or file, helping identify where a test failed.
-
-</details>
-
----
-
-## Module 26 - TestNG Infrastructure
-
-TestNG provides annotations, assertions, test suites, parameters, DataProvider, listeners, grouping, and parallel execution.
-
-<details>
-<summary>Click to expand Module 26 details, code, and expected result</summary>
-
-```java
-public class LoginTests extends BaseTest {
-    @BeforeMethod
-    public void openLoginPage() {
-        driver.get(config.getBaseUrl() + "/login");
-    }
-
-    @Test(groups = {"smoke", "login"})
-    public void validLoginTest() {
-        Assert.assertTrue(true);
-    }
-
-    @AfterMethod
-    public void cleanup() {
-        driver.manage().deleteAllCookies();
-    }
-}
-```
-
-### Expected Result
-
-TestNG runs setup before each test, executes grouped tests, and performs cleanup after each test.
-
-</details>
-
----
-
-## Module 27 - JUnit / Pytest Equivalent Concepts for Java
-
-The referenced course uses Python testing frameworks. In Java Selenium, the equivalent frameworks are typically **TestNG** and **JUnit 5**.
-
-<details>
-<summary>Click to expand Module 27 details, code, and expected result</summary>
-
-### JUnit 5 Example
-
-```java
-import org.junit.jupiter.api.*;
-
-public class JUnitLoginTests {
-    @BeforeEach
-    void setup() {
-        System.out.println("Setup driver");
-    }
-
-    @Test
-    void validLoginTest() {
-        Assertions.assertTrue(true);
-    }
-
-    @AfterEach
-    void teardown() {
-        System.out.println("Quit driver");
-    }
-}
-```
-
-### When to Use TestNG vs JUnit
-
-| Framework | Best Use |
-|---|---|
-| TestNG | Enterprise Selenium suites, XML suites, groups, DataProvider, parallel runs |
-| JUnit 5 | Modern Java unit/integration tests, Spring projects, clean annotation model |
-
-</details>
-
----
-
-## Module 28 - Automation Framework - Part 1
-
-Framework Part 1 establishes the framework foundation.
-
-<details>
-<summary>Click to expand Module 28 details, files, code, and expected result</summary>
-
-### Starter Structure
-
-```text
-selenium-java-framework/
-├── pom.xml
-├── testng.xml
-├── src/test/java/base/BaseTest.java
-├── src/test/java/factory/DriverFactory.java
-├── src/test/java/pages/LoginPage.java
-├── src/test/java/tests/LoginTests.java
-├── src/test/java/utils/ConfigReader.java
-└── src/test/resources/config.properties
-```
-
-### BaseTest
-
-```java
-public class BaseTest {
-    protected WebDriver driver;
-
-    @BeforeMethod
-    public void setUp() {
-        driver = DriverFactory.createDriver(ConfigReader.get("browser"));
-        driver.manage().window().maximize();
-        driver.get(ConfigReader.get("baseUrl"));
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        if (driver != null) driver.quit();
-    }
-}
-```
-
-### Expected Result
-
-Every test starts with a configured browser and closes the browser after execution.
-
-</details>
-
----
-
-## Module 29 - Automation Framework - Part 2
-
-Framework Part 2 adds custom wrappers and utility methods.
-
-<details>
-<summary>Click to expand Module 29 details, code, and expected result</summary>
+Reusable methods standardize click, type, wait, and text retrieval.
 
 ```java
 public class ElementUtils {
@@ -1062,309 +229,679 @@ public class ElementUtils {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
+    public WebElement waitForVisible(By locator) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
     public void click(By locator) {
         wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
     }
 
     public void type(By locator, String value) {
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        WebElement element = waitForVisible(locator);
         element.clear();
         element.sendKeys(value);
     }
 }
 ```
 
-### Expected Result
-
-Page Objects can use `ElementUtils` for consistent waits and interactions.
-
-</details>
+Expected result: tests use consistent wait-aware interactions.
 
 ---
 
-## Module 30 - Automation Framework - Part 3
+## Module 8 - Classes and OOP
 
-Framework Part 3 adds listeners, reporting, retries, and CI readiness.
-
-<details>
-<summary>Click to expand Module 30 details, code, and expected result</summary>
-
-### Screenshot Listener
+OOP enables reusable framework classes such as Page Objects, BaseTest, DriverFactory, and utilities.
 
 ```java
-public class TestListener implements ITestListener {
-    @Override
-    public void onTestFailure(ITestResult result) {
-        Object instance = result.getInstance();
-        WebDriver driver = ((BaseTest) instance).driver;
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        System.out.println("Captured screenshot for: " + result.getName());
+public abstract class AbstractComponent {
+    protected WebDriver driver;
+    protected WebDriverWait wait;
+
+    public AbstractComponent(WebDriver driver) {
+        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }
+
+    public void waitForElementToAppear(By locator) {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 }
 ```
 
-### Retry Analyzer
+```java
+public class ProductCataloguePage extends AbstractComponent {
+    private By productsBy = By.cssSelector(".mb-3");
+
+    public ProductCataloguePage(WebDriver driver) {
+        super(driver);
+    }
+
+    public List<WebElement> getProductList() {
+        waitForElementToAppear(productsBy);
+        return driver.findElements(productsBy);
+    }
+}
+```
+
+Expected result: shared functionality is inherited by page classes.
+
+---
+
+## Module 9 - Exception Handling
+
+Good exception handling improves debugging without hiding real failures.
 
 ```java
-public class RetryAnalyzer implements IRetryAnalyzer {
-    private int count = 0;
-    private static final int maxRetry = 1;
+public void safeClick(By locator) {
+    try {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
+    } catch (ElementClickInterceptedException e) {
+        WebElement element = driver.findElement(locator);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+    } catch (TimeoutException e) {
+        throw new AssertionError("Element was not clickable: " + locator, e);
+    }
+}
+```
 
-    public boolean retry(ITestResult result) {
-        if (count < maxRetry) {
-            count++;
-            return true;
+```java
+public static String captureScreenshot(WebDriver driver, String testName) throws IOException {
+    File source = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+    String path = System.getProperty("user.dir") + "/screenshots/" + testName + ".png";
+    FileUtils.copyFile(source, new File(path));
+    return path;
+}
+```
+
+Common exceptions: `NoSuchElementException`, `TimeoutException`, `StaleElementReferenceException`, and `ElementClickInterceptedException`.
+
+---
+
+## Module 10 - Modules and Packages
+
+```text
+src/test/java/
+├── api/
+├── base/
+├── components/
+├── factory/
+├── listeners/
+├── pages/
+├── retry/
+├── tests/
+└── utils/
+```
+
+Expected result: setup, tests, page objects, API helpers, listeners, retry logic, and utilities are separated clearly.
+
+---
+
+## Module 11 - Working with Files
+
+```properties
+browser=chrome
+baseUrl=https://example.com
+headless=false
+timeout=10
+```
+
+```java
+public class ConfigReader {
+    private static Properties properties = new Properties();
+
+    static {
+        try (FileInputStream input = new FileInputStream("src/test/resources/config.properties")) {
+            properties.load(input);
+        } catch (IOException e) {
+            throw new RuntimeException("Unable to load config file", e);
         }
-        return false;
+    }
+
+    public static String get(String key) {
+        return System.getProperty(key) != null ? System.getProperty(key) : properties.getProperty(key);
     }
 }
 ```
 
-### Expected Result
-
-Failures capture evidence and unstable tests can be retried in a controlled way.
-
-</details>
+Expected result: browser, URL, timeout, and environment values are read from configuration.
 
 ---
 
-## Module 31 - Framework Practice Exercise
+## Module 12 - Inspecting Elements
 
-This module combines page classes, test classes, waits, locators, data, navigation, and iframe handling into a working scenario.
-
-<details>
-<summary>Click to expand Module 31 details, code, and expected result</summary>
+Inspect ID, name, `data-testid`, `aria-label`, visible text, parent-child relationships, dynamic attributes, and iframe boundaries.
 
 ```java
-@Test
-public void registerForCourseTest() {
-    LoginPage loginPage = new LoginPage(driver);
-    DashboardPage dashboard = loginPage.login("student@example.com", "Password123");
-    CoursesPage courses = dashboard.openCourses();
-    courses.searchCourse("Selenium WebDriver");
-    courses.selectCourse("Selenium WebDriver 4 Java");
-    Assert.assertTrue(courses.isRegistrationConfirmationDisplayed());
+By email = By.id("userEmail");
+By field = By.cssSelector("input[type='text']");
+By submit = By.cssSelector("button[type='submit']");
+By error = By.xpath("//div[contains(@class,'toast') and contains(text(),'Incorrect')]");
+```
+
+Best practices: prefer stable IDs and test-specific attributes, avoid absolute XPath, verify uniqueness, and check for iframes.
+
+---
+
+## Module 13 - WebDriver Setup
+
+```java
+WebDriver driver = new ChromeDriver();
+driver.manage().window().maximize();
+driver.get("https://example.com");
+driver.navigate().to("https://www.selenium.dev");
+driver.navigate().back();
+driver.navigate().forward();
+driver.navigate().refresh();
+driver.quit();
+```
+
+```java
+ChromeOptions options = new ChromeOptions();
+options.addArguments("--start-maximized");
+options.addArguments("--disable-notifications");
+options.addArguments("--window-size=1920,1080");
+WebDriver driver = new ChromeDriver(options);
+```
+
+---
+
+## Module 14 - Multiple Browsers
+
+```java
+public class DriverFactory {
+    public static WebDriver createDriver(String browser, boolean headless) {
+        switch (browser.toLowerCase()) {
+            case "firefox":
+                FirefoxOptions firefox = new FirefoxOptions();
+                if (headless) firefox.addArguments("--headless");
+                return new FirefoxDriver(firefox);
+            case "edge":
+                EdgeOptions edge = new EdgeOptions();
+                if (headless) edge.addArguments("--headless");
+                return new EdgeDriver(edge);
+            case "chrome":
+            default:
+                ChromeOptions chrome = new ChromeOptions();
+                if (headless) chrome.addArguments("--headless=new");
+                chrome.addArguments("--window-size=1920,1080");
+                return new ChromeDriver(chrome);
+        }
+    }
 }
 ```
 
-### Expected Result
-
-The test logs in, navigates to courses, searches for a Selenium course, registers, and validates confirmation.
-
-</details>
+```bash
+mvn clean test -Dbrowser=chrome
+mvn clean test -Dbrowser=firefox
+mvn clean test -Dbrowser=edge -Dheadless=true
+```
 
 ---
 
-## Module 32 - Data-Driven Testing
+## Module 15 - Finding Elements
 
-Data-driven testing runs the same test with multiple data sets.
+```java
+driver.findElement(By.id("userEmail")).sendKeys("qa@example.com");
+driver.findElement(By.name("email")).sendKeys("qa@example.com");
+driver.findElement(By.className("login-btn")).click();
+driver.findElement(By.linkText("Forgot link")).click();
+driver.findElement(By.partialLinkText("Forgot")).click();
+driver.findElement(By.tagName("h1")).getText();
+driver.findElement(By.cssSelector("button[type='submit']")).click();
+driver.findElement(By.xpath("//button[text()='Login']")).click();
+```
 
-<details>
-<summary>Click to expand Module 32 details, code, and expected result</summary>
+```java
+List<WebElement> links = driver.findElements(By.tagName("a"));
+System.out.println("Total links: " + links.size());
+```
+
+---
+
+## Module 16 - CSS Selectors
+
+| Selector | Example |
+|---|---|
+| ID | `#userEmail` |
+| Class | `.btn-primary` |
+| Attribute | `input[type='text']` |
+| Contains | `input[id*='Email']` |
+| Starts with | `input[id^='user']` |
+| Ends with | `input[id$='Email']` |
+| Child | `form button` |
+| nth child | `table tr:nth-child(2)` |
+
+```java
+By email = By.cssSelector("#userEmail");
+By productCards = By.cssSelector("div.mb-3");
+By addToCart = By.cssSelector(".card-body button:last-of-type");
+By toast = By.cssSelector("#toast-container .toast-message");
+```
+
+---
+
+## Module 17 - XPath Locators
+
+| Pattern | Example |
+|---|---|
+| Attribute | `//input[@id='userEmail']` |
+| Text | `//button[text()='Login']` |
+| Contains | `//button[contains(text(),'Log')]` |
+| Starts with | `//input[starts-with(@id,'user')]` |
+| Parent | `//label[text()='Email']/parent::div` |
+| Ancestor | `//b[text()='ZARA COAT 3']/ancestor::div[contains(@class,'card-body')]` |
+| Following sibling | `//td[text()='Brian']/following-sibling::td/button` |
+
+```java
+By addToCartForProduct = By.xpath(
+    "//b[text()='ZARA COAT 3']/ancestor::div[contains(@class,'card-body')]//button[contains(text(),'Add To Cart')]"
+);
+```
+
+---
+
+## Module 18 - Working with WebElements
+
+```java
+WebElement email = driver.findElement(By.id("userEmail"));
+email.clear();
+email.sendKeys("qa@example.com");
+
+Select country = new Select(driver.findElement(By.id("country")));
+country.selectByVisibleText("United States");
+Assert.assertEquals(country.getFirstSelectedOption().getText(), "United States");
+
+WebElement checkbox = driver.findElement(By.cssSelector("input[type='checkbox']"));
+if (!checkbox.isSelected()) {
+    checkbox.click();
+}
+Assert.assertTrue(checkbox.isSelected());
+```
+
+---
+
+## Module 19 - Useful WebDriver Methods
+
+```java
+driver.get("https://example.com");
+String title = driver.getTitle();
+String url = driver.getCurrentUrl();
+String source = driver.getPageSource();
+driver.manage().window().maximize();
+driver.manage().deleteAllCookies();
+```
+
+```java
+driver.manage().addCookie(new Cookie("testMode", "true"));
+Cookie cookie = driver.manage().getCookieNamed("testMode");
+Assert.assertEquals(cookie.getValue(), "true");
+```
+
+---
+
+## Module 20 - Wait Types
+
+```java
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+WebElement loginButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("login")));
+loginButton.click();
+```
+
+```java
+Wait<WebDriver> fluentWait = new FluentWait<>(driver)
+        .withTimeout(Duration.ofSeconds(20))
+        .pollingEvery(Duration.ofMillis(500))
+        .ignoring(NoSuchElementException.class)
+        .ignoring(StaleElementReferenceException.class);
+
+WebElement result = fluentWait.until(d -> d.findElement(By.id("result")));
+```
+
+---
+
+## Module 21 - Advanced Interactions
+
+```java
+JavascriptExecutor js = (JavascriptExecutor) driver;
+WebElement table = driver.findElement(By.cssSelector(".tableFixHead"));
+js.executeScript("arguments[0].scrollTop = arguments[0].scrollHeight", table);
+```
+
+```java
+List<WebElement> amountCells = driver.findElements(By.cssSelector(".tableFixHead td:nth-child(4)"));
+int calculatedTotal = amountCells.stream()
+        .map(WebElement::getText)
+        .mapToInt(Integer::parseInt)
+        .sum();
+String displayedText = driver.findElement(By.cssSelector(".totalAmount")).getText();
+int displayedTotal = Integer.parseInt(displayedText.replaceAll("[^0-9]", ""));
+Assert.assertEquals(calculatedTotal, displayedTotal);
+```
+
+---
+
+## Module 22 - File Upload and Download
+
+```java
+Path uploadFile = Paths.get("src/test/resources/files/upload.xlsx").toAbsolutePath();
+WebElement uploadInput = driver.findElement(By.cssSelector("input[type='file']"));
+uploadInput.sendKeys(uploadFile.toString());
+```
+
+```java
+Path downloadDir = Paths.get("downloads").toAbsolutePath();
+Map<String, Object> prefs = new HashMap<>();
+prefs.put("download.default_directory", downloadDir.toString());
+prefs.put("download.prompt_for_download", false);
+ChromeOptions options = new ChromeOptions();
+options.setExperimentalOption("prefs", prefs);
+```
+
+---
+
+## Module 23 - Windows and Iframes
+
+```java
+Alert alert = driver.switchTo().alert();
+String alertText = alert.getText();
+alert.accept();
+```
+
+```java
+String parentWindow = driver.getWindowHandle();
+driver.findElement(By.id("openwindow")).click();
+for (String window : driver.getWindowHandles()) {
+    if (!window.equals(parentWindow)) {
+        driver.switchTo().window(window);
+        break;
+    }
+}
+driver.close();
+driver.switchTo().window(parentWindow);
+```
+
+```java
+driver.switchTo().frame("courses-iframe");
+driver.findElement(By.linkText("Courses")).click();
+driver.switchTo().defaultContent();
+```
+
+---
+
+## Module 24 - Actions Class
+
+```java
+Actions actions = new Actions(driver);
+WebElement menu = driver.findElement(By.id("mousehover"));
+actions.moveToElement(menu).perform();
+driver.findElement(By.linkText("Top")).click();
+```
+
+```java
+WebElement source = driver.findElement(By.id("draggable"));
+WebElement target = driver.findElement(By.id("droppable"));
+new Actions(driver).dragAndDrop(source, target).perform();
+```
+
+---
+
+## Module 25 - Logging Infrastructure
+
+```java
+private static final Logger logger = LogManager.getLogger(LoginTests.class);
+logger.info("Starting login test");
+logger.debug("Entering username");
+logger.error("Dashboard was not displayed after login");
+```
+
+Logs should be archived in CI and should not include sensitive values.
+
+---
+
+## Module 26 - TestNG Infrastructure
+
+```java
+public class LoginTests extends BaseTest {
+    @BeforeMethod(alwaysRun = true)
+    public void openLoginPage() {
+        driver.get(ConfigReader.get("baseUrl"));
+    }
+
+    @Test(groups = {"smoke", "login"}, priority = 1)
+    public void validLoginTest() {
+        Assert.assertTrue(true);
+    }
+}
+```
 
 ```java
 @DataProvider(name = "loginData")
 public Object[][] loginData() {
     return new Object[][] {
-            {"valid@example.com", "Password123", true},
-            {"locked@example.com", "Password123", false},
-            {"bad@example.com", "wrong", false}
+            {"valid@example.com", "validCredential", true},
+            {"invalid@example.com", "invalidCredential", false}
     };
-}
-
-@Test(dataProvider = "loginData")
-public void loginDataDrivenTest(String email, String password, boolean expectedSuccess) {
-    LoginPage loginPage = new LoginPage(driver);
-    boolean actualSuccess = loginPage.loginAndReturnStatus(email, password);
-    Assert.assertEquals(actualSuccess, expectedSuccess);
 }
 ```
 
-### Expected Result
+---
 
-TestNG runs the login test once for each row of data.
+## Module 27 - JUnit / Pytest Equivalents
 
-</details>
+```java
+public class JUnitLoginTest {
+    WebDriver driver;
+
+    @BeforeEach
+    void setup() {
+        driver = new ChromeDriver();
+    }
+
+    @Test
+    void titleTest() {
+        driver.get("https://example.com");
+        Assertions.assertEquals("Example Domain", driver.getTitle());
+    }
+
+    @AfterEach
+    void teardown() {
+        driver.quit();
+    }
+}
+```
 
 ---
 
-## Module 33 - Running the Complete Test Suite
+## Module 28 - Framework Part 1
 
-Complete suite execution should support smoke, regression, browser-specific, and environment-specific runs.
+```java
+List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));
+WebElement targetProduct = products.stream()
+        .filter(product -> product.findElement(By.cssSelector("b")).getText().equals("ZARA COAT 3"))
+        .findFirst()
+        .orElseThrow(() -> new RuntimeException("Product not found"));
 
-<details>
-<summary>Click to expand Module 33 details, commands, and expected result</summary>
+targetProduct.findElement(By.cssSelector("button:last-of-type")).click();
+```
+
+---
+
+## Module 29 - Framework Part 2
+
+```java
+public class LandingPage extends AbstractComponent {
+    WebDriver driver;
+
+    @FindBy(id = "userEmail")
+    WebElement userEmail;
+
+    @FindBy(id = "userCredential")
+    WebElement userCredential;
+
+    @FindBy(id = "login")
+    WebElement loginButton;
+
+    public LandingPage(WebDriver driver) {
+        super(driver);
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    public ProductCataloguePage loginApplication(String email, String credential) {
+        userEmail.sendKeys(email);
+        userCredential.sendKeys(credential);
+        loginButton.click();
+        return new ProductCataloguePage(driver);
+    }
+}
+```
+
+---
+
+## Module 30 - Framework Part 3
+
+```java
+public class BaseTest {
+    public WebDriver driver;
+    public LandingPage landingPage;
+
+    @BeforeMethod(alwaysRun = true)
+    public void launchApplication() throws IOException {
+        driver = DriverFactory.createDriver(ConfigReader.get("browser"), Boolean.parseBoolean(ConfigReader.get("headless")));
+        landingPage = new LandingPage(driver);
+        landingPage.goTo();
+    }
+
+    @AfterMethod(alwaysRun = true)
+    public void tearDown() {
+        if (driver != null) driver.quit();
+    }
+}
+```
+
+---
+
+## Module 31 - Framework Practice Exercise
+
+```java
+@Test(groups = {"regression", "order"})
+public void submitOrderTest() {
+    String productName = "ZARA COAT 3";
+    ProductCataloguePage productCatalogue = landingPage.loginApplication("user@example.com", "validCredential");
+    productCatalogue.addProductToCart(productName);
+    CartPage cartPage = productCatalogue.goToCartPage();
+    Assert.assertTrue(cartPage.verifyProductDisplay(productName));
+    CheckoutPage checkoutPage = cartPage.goToCheckout();
+    checkoutPage.selectCountry("India");
+    ConfirmationPage confirmationPage = checkoutPage.submitOrder();
+    Assert.assertEquals(confirmationPage.getConfirmationMessage(), "THANKYOU FOR THE ORDER.");
+}
+```
+
+---
+
+## Module 32 - Data-Driven Testing
+
+```java
+@DataProvider
+public Object[][] getData() {
+    HashMap<String, String> user1 = new HashMap<>();
+    user1.put("email", "user1@example.com");
+    user1.put("credential", "validCredential");
+    user1.put("product", "ZARA COAT 3");
+    return new Object[][] {{user1}};
+}
+```
+
+---
+
+## Module 33 - Running Complete Test Suite
 
 ```bash
 mvn clean test
 mvn clean test -Dbrowser=chrome
-mvn clean test -DsuiteXmlFile=testng-smoke.xml
-mvn clean test -Denv=qa -Dbrowser=firefox
+mvn clean test -Dbrowser=firefox -Dheadless=true
+mvn clean test -DsuiteXmlFile=testng.xml
+mvn clean test -Dgroups=smoke
 ```
-
-### TestNG Suite
-
-```xml
-<suite name="Regression Suite" parallel="tests" thread-count="2">
-    <test name="Chrome Tests">
-        <parameter name="browser" value="chrome"/>
-        <classes>
-            <class name="tests.LoginTests"/>
-        </classes>
-    </test>
-</suite>
-```
-
-### Expected Result
-
-Maven runs the selected suite and generates Surefire/TestNG reports.
-
-</details>
 
 ---
 
-## Module 34 - Git and GitHub Version Control
-
-Git protects framework history and supports collaboration.
-
-<details>
-<summary>Click to expand Module 34 details, commands, and expected result</summary>
+## Module 34 - Git and GitHub
 
 ```bash
 git init
 git status
 git add .
 git commit -m "Add Selenium Java framework"
-git branch -M main
 git remote add origin https://github.com/BrianGator/Selenium-Automation-Hero-Python-Showcase.git
 git push -u origin main
 ```
 
-### Branch Workflow
-
-```bash
-git checkout -b feature/login-tests
-git add .
-git commit -m "Add login tests"
-git checkout main
-git merge feature/login-tests
+```gitignore
+target/
+reports/
+screenshots/
+logs/
+downloads/
+.env
 ```
-
-### Expected Result
-
-Framework changes are version-controlled and can be integrated with Jenkins/GitHub Actions.
-
-</details>
 
 ---
 
-## Module 35 - Continuous Integration with Jenkins
-
-Jenkins runs automated Selenium suites after code changes, on schedules, or before releases.
-
-<details>
-<summary>Click to expand Module 35 details, pipeline code, and expected result</summary>
+## Module 35 - Jenkins CI/CD
 
 ```groovy
 pipeline {
     agent any
-
     tools {
         maven 'Maven-3.9'
         jdk 'JDK-17'
     }
-
     stages {
         stage('Checkout') {
-            steps {
-                git 'https://github.com/BrianGator/Selenium-Automation-Hero-Python-Showcase.git'
-            }
+            steps { git 'https://github.com/BrianGator/Selenium-Automation-Hero-Python-Showcase.git' }
         }
         stage('Run Tests') {
-            steps {
-                sh 'mvn clean test -Dbrowser=chrome'
-            }
+            steps { sh 'mvn clean test -Dbrowser=chrome -Dheadless=true' }
         }
     }
-
     post {
         always {
             junit 'target/surefire-reports/*.xml'
-            archiveArtifacts artifacts: 'screenshots/**/*, logs/**/*, target/surefire-reports/**/*', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'reports/**/*, screenshots/**/*, logs/**/*', allowEmptyArchive: true
         }
     }
 }
 ```
 
-### Expected Result
-
-Jenkins checks out the repo, runs tests with Maven, publishes JUnit results, and archives screenshots/logs/reports.
-
-</details>
-
 ---
 
-## Module 36 - Conclusion and Next Steps
+## Module 36 - Conclusion
 
-After completing the modules, the framework should be expanded with cloud execution, API setup/cleanup, database validation, visual testing, and CI/CD maturity.
-
-<details>
-<summary>Click to expand Module 36 recommendations</summary>
-
-### Recommended Next Steps
-
-- Add Selenium Grid or cloud execution.
-- Add Rest Assured API tests.
-- Add role-based login coverage.
-- Add Allure or ExtentReports.
-- Add GitHub Actions in addition to Jenkins.
-- Add Docker execution.
-- Add contract/API tests for backend workflows.
-- Add performance smoke checks for key pages.
-
-</details>
+Recommended next steps: Selenium Grid, cloud browser providers, API setup and cleanup, JDBC validation, ExtentReports or Allure, Docker execution, GitHub Actions, and Cucumber BDD.
 
 ---
 
 ## API Tests for Selenium Java Frameworks
 
-API testing complements Selenium UI testing by validating backend behavior and preparing/cleaning test data.
-
-### Rest Assured Dependency
-
-```xml
-<dependency>
-    <groupId>io.rest-assured</groupId>
-    <artifactId>rest-assured</artifactId>
-    <version>5.4.0</version>
-    <scope>test</scope>
-</dependency>
-```
-
-### GET API Test
+API testing supports UI automation by preparing data, validating backend behavior, and cleaning up records.
 
 ```java
-import org.testng.annotations.Test;
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
-
-public class UserApiTests {
-    @Test
-    public void getUserProfileTest() {
-        given()
-            .baseUri("https://api.example.com")
-            .header("Authorization", "Bearer token")
-        .when()
-            .get("/users/123")
-        .then()
-            .statusCode(200)
-            .body("id", equalTo(123))
-            .body("email", containsString("@"));
-    }
+@Test(groups = {"api"})
+public void getUserProfileTest() {
+    given()
+        .baseUri("https://api.example.com")
+    .when()
+        .get("/users/123")
+    .then()
+        .statusCode(200)
+        .body("id", equalTo(123))
+        .body("email", containsString("@"));
 }
 ```
-
-### POST API Setup for Selenium UI Test
 
 ```java
 String orderId = given()
@@ -1379,386 +916,168 @@ String orderId = given()
     .path("id");
 ```
 
-### Expected Result
-
-- API tests validate backend behavior quickly.
-- UI tests can start with prepared data instead of manual setup.
-- Cleanup APIs remove records created during automated tests.
-
 ---
 
 ## Login Tests for Selenium Java Frameworks
 
-Login testing validates authentication, access control, error handling, and session behavior.
-
-### Login Page Object
-
 ```java
 public class LoginPage {
     private WebDriver driver;
-    private By email = By.id("email");
-    private By password = By.id("password");
-    private By loginButton = By.cssSelector("button[type='submit']");
-    private By errorMessage = By.cssSelector(".alert-danger");
+    private By email = By.id("userEmail");
+    private By credential = By.id("userCredential");
+    private By loginButton = By.id("login");
+    private By errorMessage = By.cssSelector(".toast-message");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void login(String userEmail, String userPassword) {
+    public void login(String userEmail, String userCredential) {
         driver.findElement(email).clear();
         driver.findElement(email).sendKeys(userEmail);
-        driver.findElement(password).clear();
-        driver.findElement(password).sendKeys(userPassword);
+        driver.findElement(credential).clear();
+        driver.findElement(credential).sendKeys(userCredential);
         driver.findElement(loginButton).click();
     }
-
-    public String getErrorMessage() {
-        return driver.findElement(errorMessage).getText();
-    }
 }
 ```
-
-### Valid Login Test
-
-```java
-@Test(groups = {"smoke", "login"})
-public void validLoginTest() {
-    LoginPage loginPage = new LoginPage(driver);
-    loginPage.login(System.getenv("TEST_USER_EMAIL"), System.getenv("TEST_USER_PASSWORD"));
-    Assert.assertTrue(driver.getCurrentUrl().contains("dashboard"));
-}
-```
-
-### Invalid Login Test
-
-```java
-@Test(groups = {"login"})
-public void invalidLoginTest() {
-    LoginPage loginPage = new LoginPage(driver);
-    loginPage.login("bad@example.com", "wrong-password");
-    Assert.assertTrue(loginPage.getErrorMessage().contains("Invalid"));
-}
-```
-
-### Login Coverage Checklist
 
 | Scenario | Expected Result |
 |---|---|
-| Valid credentials | Dashboard loads |
-| Invalid password | Error message appears |
-| Empty username/password | Required field validation appears |
-| Locked user | Locked user message appears |
-| Logout | User returns to login page |
-| Expired session | User is redirected to login |
-| Role-based login | User sees correct menu/features |
+| Valid login | User reaches product catalogue/dashboard. |
+| Invalid login | Error message appears. |
+| Empty fields | Required validation appears. |
+| Locked user | Locked account message appears. |
+| Logout | User returns to login screen. |
+| Role-based login | Correct role-specific features appear. |
 
 ---
 
 ## Locator Reference Guide
 
-| Locator | Example | Best Use |
-|---|---|---|
-| ID | `By.id("email")` | Best locator when stable and unique |
-| Name | `By.name("password")` | Good for forms |
-| CSS | `By.cssSelector("button[type='submit']")` | Fast and readable for attributes/classes |
-| XPath | `By.xpath("//button[text()='Login']")` | Useful for text and DOM relationships |
-| Link text | `By.linkText("Login")` | Exact anchor text |
-| Partial link text | `By.partialLinkText("Log")` | Partial anchor text |
-| Class name | `By.className("btn-primary")` | Use carefully; often not unique |
-| Tag name | `By.tagName("a")` | Useful for lists/counts |
+| Priority | Locator | Example | Notes |
+|---:|---|---|---|
+| 1 | ID | `By.id("userEmail")` | Best when stable and unique. |
+| 2 | Test attribute | `By.cssSelector("[data-testid='login']")` | Excellent for automation. |
+| 3 | Name | `By.name("email")` | Good for forms. |
+| 4 | CSS | `By.cssSelector("button[type='submit']")` | Fast and readable. |
+| 5 | XPath | `By.xpath("//button[text()='Login']")` | Good for text and relationships. |
+| 6 | Link text | `By.linkText("Forgot Link")` | Good for links. |
 
-### Locator Best Practices
-
-- Prefer stable IDs and test-specific attributes.
-- Prefer CSS for readable attribute and hierarchy selectors.
-- Use XPath for text, parent/sibling, and complex DOM traversal.
-- Avoid absolute XPath.
-- Avoid brittle generated classes.
-- Avoid indexes unless the UI is intentionally ordered and stable.
-- Always verify a locator is unique before using it in framework code.
+Avoid absolute XPath, generated class names, heavy indexes, and locators stored directly in test methods.
 
 ---
 
 ## Building a Selenium Java Framework from Scratch
 
-A custom Selenium framework is useful when tests need reusable setup, consistent waits, Page Objects, reports, logging, data management, CI/CD, and cross-browser execution.
-
-### Required Files and Folders
-
 ```text
 selenium-java-framework/
 ├── pom.xml
 ├── testng.xml
+├── Jenkinsfile
 ├── README.md
 ├── .gitignore
-├── Jenkinsfile
 ├── src/test/java/base/BaseTest.java
 ├── src/test/java/factory/DriverFactory.java
-├── src/test/java/pages/LoginPage.java
-├── src/test/java/pages/DashboardPage.java
-├── src/test/java/tests/LoginTests.java
-├── src/test/java/tests/ApiTests.java
+├── src/test/java/components/AbstractComponent.java
+├── src/test/java/pages/LandingPage.java
+├── src/test/java/pages/ProductCataloguePage.java
+├── src/test/java/pages/CartPage.java
+├── src/test/java/pages/CheckoutPage.java
+├── src/test/java/tests/SubmitOrderTest.java
+├── src/test/java/tests/LoginTest.java
+├── src/test/java/api/ApiClient.java
+├── src/test/java/listeners/TestListener.java
+├── src/test/java/retry/RetryAnalyzer.java
 ├── src/test/java/utils/ConfigReader.java
 ├── src/test/java/utils/ElementUtils.java
 ├── src/test/java/utils/ScreenshotUtils.java
-├── src/test/java/listeners/TestListener.java
 ├── src/test/resources/config.properties
-├── src/test/resources/testdata/login-data.csv
+├── reports/
 ├── screenshots/
 ├── logs/
-└── reports/
+└── downloads/
 ```
 
-### Step-by-Step Build
+### Build Steps
 
 1. Create Maven project.
-2. Add Selenium, TestNG, WebDriverManager, Rest Assured, and Log4j dependencies.
-3. Create `config.properties`.
-4. Build `ConfigReader`.
-5. Build `DriverFactory`.
-6. Build `BaseTest`.
-7. Build Page Object classes.
-8. Build utility classes for waits, screenshots, JavaScript, and data.
-9. Add TestNG tests.
-10. Add DataProvider tests.
-11. Add listeners and reporting.
-12. Add API setup/cleanup tests.
+2. Add Selenium, TestNG, WebDriverManager, Rest Assured, Log4j, and reporting dependencies.
+3. Create config file.
+4. Build ConfigReader.
+5. Build DriverFactory.
+6. Build BaseTest.
+7. Build AbstractComponent.
+8. Build Page Objects.
+9. Build tests.
+10. Add DataProvider support.
+11. Add screenshots and listeners.
+12. Add API setup/cleanup helper.
 13. Add Jenkinsfile.
-14. Add GitHub repository and CI trigger.
-
-### DriverFactory Example
-
-```java
-public class DriverFactory {
-    public static WebDriver createDriver(String browser) {
-        switch (browser.toLowerCase()) {
-            case "firefox": return new FirefoxDriver();
-            case "edge": return new EdgeDriver();
-            case "chrome":
-            default: return new ChromeDriver();
-        }
-    }
-}
-```
-
-### Best Practices
-
-- Keep tests readable and business-focused.
-- Keep locators inside Page Objects.
-- Keep reusable waits inside utility classes.
-- Keep credentials out of source code.
-- Run smoke tests on every pull request.
-- Use API calls for setup and cleanup when possible.
-- Capture screenshots and logs on failure.
-- Avoid over-engineering before repeated needs are clear.
+14. Add GitHub repository and CI job.
 
 ---
 
 ## Build from Scratch vs Pre-Built Frameworks
 
-### Build from Scratch When
-
-| Scenario | Why Custom Framework Helps |
+| Scenario | Recommendation |
 |---|---|
-| Enterprise application | Needs custom reporting, environments, users, roles, and workflows |
-| Large regression suite | Needs reusable Page Objects, parallel execution, tagging, and CI/CD |
-| Complex login/security | Needs role-based login, session handling, and secure credentials |
-| UI + API hybrid testing | Needs backend setup/cleanup and UI validation together |
-| Team collaboration | Needs shared standards, folder structure, naming, and framework rules |
+| Learning Selenium | Simple Maven + Selenium + TestNG project. |
+| Small smoke suite | Minimal BaseTest + Page Objects. |
+| Large enterprise app | Build custom framework. |
+| BDD requirement | Cucumber + Selenium Java. |
+| Rich reports needed | Serenity BDD, ExtentReports, or Allure. |
+| Concise syntax preferred | Selenide. |
+| Cloud coverage needed | BrowserStack, Sauce Labs, or LambdaTest templates. |
 
-### Use Pre-Built or Simple Framework When
-
-| Scenario | Better Choice |
-|---|---|
-| Learning Selenium | Simple Java + Selenium + TestNG project |
-| Small smoke suite | Minimal Page Objects and Maven are enough |
-| Existing company standard | Use the team’s established framework |
-| Fast prototype | Use Selenium IDE export, simple TestNG, or a starter template |
-| BDD requirements | Use Cucumber + Selenium + Java |
-
-### Popular Selenium Java Framework Options
-
-| Framework / Stack | Best Scenario |
-|---|---|
-| Selenium + TestNG + Maven | Most common Java QA automation framework style |
-| Selenium + JUnit 5 + Maven/Gradle | Java engineering teams and Spring projects |
-| Selenium + Cucumber + Java | BDD acceptance testing with Gherkin scenarios |
-| Selenium Grid | Distributed local browser execution |
-| Selenide | Concise Selenium wrapper with built-in waits |
-| Serenity BDD | Rich reporting and BDD-friendly framework |
-| WebDriverIO / Playwright | Consider for modern JS/TS teams or newer web-first tooling |
-| Cloud grids: BrowserStack/Sauce Labs/LambdaTest | Cross-browser/cross-platform execution without maintaining infrastructure |
-
-### Decision Rule
-
-Build a custom framework only when repeated project complexity justifies it. For small projects, use the simplest structure that supports the tests.
+Build from scratch when repeated complexity requires custom configuration, reporting, data handling, Page Objects, API setup, parallel execution, and CI/CD integration.
 
 ---
 
 ## Top 30 Selenium Java Technical Interview Questions
 
-### 1. What is Selenium WebDriver?
-
-Selenium WebDriver is an API for automating browsers through real browser drivers such as ChromeDriver, GeckoDriver, and EdgeDriver.
-
-```java
-WebDriver driver = new ChromeDriver();
-driver.get("https://example.com");
-driver.quit();
-```
-
-### 2. What is the difference between Selenium WebDriver and Selenium IDE?
-
-WebDriver is code-based browser automation. Selenium IDE is record-and-playback automation, better for quick prototypes than scalable frameworks.
-
-### 3. What is the WebDriver architecture?
-
-Test code sends commands through WebDriver APIs to a browser driver, which controls the browser and returns results.
-
-### 4. What locator strategies does Selenium support?
-
-ID, name, class name, tag name, link text, partial link text, CSS selector, and XPath.
-
-### 5. Which locator is best?
-
-Stable unique ID or test-specific attribute is usually best. CSS is generally preferred for readable attribute locators. XPath is useful for text and DOM relationships.
-
-### 6. What is the difference between `findElement` and `findElements`?
-
-`findElement` returns one element or throws `NoSuchElementException`. `findElements` returns a list and returns an empty list if none are found.
-
-```java
-WebElement button = driver.findElement(By.id("submit"));
-List<WebElement> links = driver.findElements(By.tagName("a"));
-```
-
-### 7. What is an implicit wait?
-
-An implicit wait tells WebDriver to poll for elements for a configured time before throwing `NoSuchElementException`.
+1. **What is Selenium WebDriver?** Browser automation API for controlling real browsers.
+2. **What is WebDriver architecture?** Test code sends commands through WebDriver to browser drivers.
+3. **What is Selenium Grid?** Remote/distributed browser execution.
+4. **What locators does Selenium support?** ID, name, class, tag, link text, CSS, XPath.
+5. **Best locator?** Stable ID or test-specific attribute.
+6. **`findElement` vs `findElements`?** One element/exception vs list/empty list.
+7. **Implicit wait?** Global element lookup polling.
+8. **Explicit wait?** Condition-specific wait.
+9. **FluentWait?** Custom polling and ignored exceptions.
+10. **Why avoid `Thread.sleep()`?** Slow and flaky.
+11. **How handle dropdowns?** Use `Select` for native select.
+12. **How handle dynamic dropdowns?** Type, wait, loop, click match.
+13. **How handle checkboxes?** Check `isSelected()` before click.
+14. **How handle alerts?** `driver.switchTo().alert()`.
+15. **How handle iframes?** `switchTo().frame()` and `defaultContent()`.
+16. **How switch windows?** Use window handles.
+17. **What is Actions class?** Advanced mouse/keyboard events.
+18. **How take screenshots?** `TakesScreenshot`.
+19. **What is JavaScriptExecutor?** Executes JS in browser.
+20. **What is POM?** Page Object Model separates page logic from tests.
+21. **What is PageFactory?** Initializes `@FindBy` elements.
+22. **What is TestNG?** Java test framework.
+23. **What is DataProvider?** Runs same test with multiple data rows.
+24. **How run parallel tests?** TestNG parallel XML + ThreadLocal driver.
+25. **Why ThreadLocal?** Isolates driver per thread.
+26. **What is ExtentReports?** HTML reporting library.
+27. **How run Maven tests?** `mvn clean test`.
+28. **How integrate Jenkins?** Pull repo, run Maven, publish reports.
+29. **How API supports Selenium?** Setup, validation, cleanup.
+30. **What makes framework maintainable?** POM, waits, utilities, data, logging, screenshots, reports, CI/CD.
 
 ```java
-driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+wait.until(ExpectedConditions.elementToBeClickable(By.id("login"))).click();
 ```
-
-### 8. What is an explicit wait?
-
-Explicit wait waits for a specific condition.
-
-```java
-new WebDriverWait(driver, Duration.ofSeconds(10))
-    .until(ExpectedConditions.elementToBeClickable(By.id("login")));
-```
-
-### 9. What is FluentWait?
-
-FluentWait customizes timeout, polling interval, and ignored exceptions.
-
-### 10. Why avoid `Thread.sleep()`?
-
-It creates fixed delays and causes slow/flaky tests. Use explicit waits instead.
-
-### 11. What is Page Object Model?
-
-POM stores locators and actions in page classes so tests are readable and maintainable.
-
-### 12. What is PageFactory?
-
-PageFactory initializes WebElements annotated with `@FindBy`. It is useful but many modern frameworks prefer explicit `By` locators for control.
-
-### 13. How do you handle dropdowns?
-
-Use Selenium `Select` for native `<select>` elements.
-
-```java
-Select select = new Select(driver.findElement(By.id("country")));
-select.selectByVisibleText("United States");
-```
-
-### 14. How do you handle alerts?
-
-```java
-Alert alert = driver.switchTo().alert();
-alert.accept();
-```
-
-### 15. How do you switch windows?
-
-Use `getWindowHandles()` and `switchTo().window(handle)`.
-
-### 16. How do you switch iframes?
-
-```java
-driver.switchTo().frame("frameName");
-driver.switchTo().defaultContent();
-```
-
-### 17. How do you take screenshots?
 
 ```java
 File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 ```
 
-### 18. How do you execute JavaScript?
-
-```java
-((JavascriptExecutor) driver).executeScript("window.scrollTo(0, document.body.scrollHeight)");
-```
-
-### 19. What is the Actions class used for?
-
-Mouse hover, drag-and-drop, double-click, right-click, keyboard shortcuts, and sliders.
-
-### 20. How do you upload files?
-
-Use `sendKeys()` with an absolute file path on an `<input type='file'>`.
-
-### 21. How do you validate downloaded files?
-
-Configure the download folder, trigger download, wait for the file, and assert the file exists.
-
-### 22. What is TestNG?
-
-TestNG is a Java testing framework that supports annotations, assertions, XML suites, groups, parameters, DataProvider, listeners, and parallel execution.
-
-### 23. What is DataProvider?
-
-DataProvider runs the same test with multiple sets of data.
-
-### 24. How do you run tests in parallel?
-
-Use TestNG XML with `parallel` and `thread-count`, and ensure each thread has its own WebDriver instance.
-
-### 25. Why use ThreadLocal WebDriver?
-
-ThreadLocal isolates WebDriver per thread during parallel execution.
-
-```java
-private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
-```
-
-### 26. What is Maven used for?
-
-Maven manages dependencies, builds code, and runs tests through plugins such as Surefire.
-
-### 27. How do you integrate Selenium with Jenkins?
-
-Configure Jenkins to check out code and run `mvn clean test`, then publish reports and artifacts.
-
-### 28. How can API testing support Selenium tests?
-
-API calls can create test data, validate backend state, authenticate users, and clean up records.
-
-### 29. What login scenarios should be automated?
-
-Valid login, invalid login, empty fields, locked user, logout, session timeout, and role-based access.
-
-### 30. What makes a Selenium framework maintainable?
-
-Clear folder structure, Page Objects, reusable utilities, explicit waits, config management, logging, reporting, CI/CD, clean data handling, and readable test names.
-
 ---
 
 ## Summary
 
-This README provides a complete Java Selenium WebDriver automation learning path and framework guide based on a 36-module Selenium WebDriver course outline. It includes Java examples, expected results, locator guidance, API testing, login testing, framework design, pre-built framework comparisons, CI/CD, and top technical interview questions.
+This README removes all expandable arrows and displays all Selenium Java automation module information directly on the page. It includes expanded module notes, Java code samples, expected results, API testing, login testing, locator guidance, framework-from-scratch details, framework comparison, and top technical interview questions.
